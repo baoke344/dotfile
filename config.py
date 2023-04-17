@@ -74,8 +74,16 @@ keys = [
     Key([mod], "p", lazy.spawn("rofi -show drun"), desc="Run rofi"),
 ]
 
-groups = [Group(i) for i in "123456789"]
-
+# groups = [Group(i) for i in "123456789"]
+groups = [
+    Group("1", label="󰈹", matches=[
+        Match(wm_class="firefox")]),
+    Group("2", label=""),
+    Group("3", label="󰬷"),
+    Group("4", label=""),
+    Group("5", label=""),
+    Group("6", label="󰦑")
+ ]
 for i in groups:
     keys.extend(
         [
