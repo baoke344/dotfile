@@ -29,7 +29,8 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-from mode.bar import bar
+from mode.bar import bar, get_widgets
+from mode.color import catppuccin
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -127,9 +128,10 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="sans",
-    fontsize=12,
+    font="JetBrainsMono Nerd Font",
+    fontsize=16,
     padding=3,
+    forground=catppuccin["mauve"],
 )
 extension_defaults = widget_defaults.copy()
 
