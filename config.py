@@ -118,7 +118,7 @@ layouts = [
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
-    # layout.MonadTall(),
+    layout.MonadTall(),
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
@@ -131,7 +131,7 @@ widget_defaults = dict(
     font="JetBrainsMono Nerd Font",
     fontsize=16,
     padding=3,
-    forground=catppuccin["mauve"],
+    # forground=catppuccin["mauve"],
 )
 extension_defaults = widget_defaults.copy()
 

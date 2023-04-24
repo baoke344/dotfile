@@ -1,31 +1,41 @@
-from libqtile import widget
+# from libqtile import widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.bar import Bar
+from qtile_extras.widget.decorations import RectDecoration, PowerLineDecoration
+from qtile_extras import widget
 from mode.color import nord_fox, catppuccin
+
+decoration_group = {
+    "decorations": [
+        RectDecoration(colour=nord_fox["cyan"], radius=8, filled=True, padding_y=4, padding_x=10, group=True)
+    ],
+    "padding": 12
+}
 
 bar = Bar(
     [
-        widget.Spacer(
-            length=3,
-            background="#00000000",
-        ),
         # widget.CurrentLayout(),
         widget.TextBox(
-            text="󱎕",
-            fontsize=25,
-            foreground=catppuccin["blue"],
-            background="#00000000",
         ),
         widget.GroupBox(
-            disable_drag=True,
-            active=nord_fox['magenta'],
-            inactive=nord_fox['black'],
+            fontsize=15,
+            borderwidth=3,
             highlight_method='line',
-            block_highlight_text_color=nord_fox['fg_gutter'],
-            borderwidth=0,
-            highlight_color=nord_fox['bg'],
-            background=catppuccin['blue'],
+            active='#CAA9E0',
+            # block_highlight_text_color="#91B1F0",
+            highlight_color='#4B427E',
+            inactive='#282738',
+            # foreground='#4B427E',
+            # background='#353446',
+            this_current_screen_border='#353446',
+            this_screen_border='#353446',
+            other_current_screen_border='#353446',
+            other_screen_border='#353446',
+            urgent_border='#353446',
+            rounded=True,
+            disable_drag=True,
+            **decoration_group,
         ),
         widget.Prompt(),
         widget.WindowName(),
